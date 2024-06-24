@@ -4,6 +4,7 @@ import { db } from "@/utils/db";
 import { MockInterview } from "@/utils/schema";
 import { eq } from "drizzle-orm";
 import { Info, TriangleAlert, WebcamIcon } from "lucide-react";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Webcam from "react-webcam";
 
@@ -48,15 +49,15 @@ const Interview = ({ params }) => {
             </h2>
           </div>
           <div className=" text-balance pt-5">
-            <div className="flex items-center  p-2 rounded text-balance">
+            <div className="flex items-center border border-yellow-400 bg-yellow-100 p-2 rounded text-balance">
               <Info className="text-yellow-700 mr-2" />
               <strong className="mr-2 ">Information:</strong>
               <span>
-                Activate webcam and microphone for AI-generated mock interview
+                Activate webcam and microphone for AI-generated mock interview.
               </span>
             </div>
             <br></br>
-            <div className="flex items-center  p-2 rounded">
+            <div className="flex items-center bg-red-200 border border-red-400  p-2 rounded">
               <TriangleAlert className="text-red-700 mr-2" />
               <strong className="mr-2 ">Note:</strong>
               <span>We do not store or record your webcam videos.</span>
@@ -73,15 +74,26 @@ const Interview = ({ params }) => {
             />
           ) : (
             <>
-              <WebcamIcon className="h-72 my-7 w-72 p-20 border bg-gray-100 rounded-xl" />
-              <Button
-                onClick={() => setWebCamEnabled(true)}
-                className="bg-black rounded-xl text-yellow-300 text-base"
-              >
-                Enable Web Cam and MicroPhone{" "}
-              </Button>{" "}
+              <WebcamIcon className="h-72 w-full my-7 p-20 border bg-gray-100 rounded-xl  " />
+              <div className="flex justify-center items-center ">
+                <Button
+                  onClick={() => setWebCamEnabled(true)}
+                  className="bg-gray-100 rounded-xl text-black hover:shadow-gray-100 text-base"
+                >
+                  Enable Web Cam and Microphone
+                </Button>
+              </div>
             </>
           )}
+          <div className="flex justify-end items-end">
+            <Link
+              href={"/dashboard/interview/" + params.interviewId + "/start"}
+            >
+              <Button className="bg-black rounded-xl text-white text-base">
+                Start the Interview
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
