@@ -22,8 +22,6 @@ const RecordAnswerSection = ({
   const { user } = useUser();
   const [loading, setLoading] = useState(false);
   const {
-    error,
-    interimResult,
     isRecording,
     results,
     startSpeechToText,
@@ -71,12 +69,14 @@ const RecordAnswerSection = ({
       userAnswer +
       ",Depending on the question, please rate the user's answer in this interview. " +
       "please provide the correct answer in JSON format and sum up what the user must further learn." +
-      "including a rating field and a feedback field,";
+      "including a rating field and a feedback field,avoid usage of astrick symbol";
     const result = await chatSession.sendMessage(feedbackPrompt);
     const mockJsonRes = result.response
       .text()
       .replace("```json", "")
-      .replace("```", "");
+      .replace("```", "")
+      .replace("*", "")
+      .replace("**", "");
     console.log(mockJsonRes);
     const JsonFeedbackResp = JSON.parse(mockJsonRes);
     const resp = await db.insert(UserAnswer).values({

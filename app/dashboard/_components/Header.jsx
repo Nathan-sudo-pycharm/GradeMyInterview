@@ -24,24 +24,17 @@ const Header = () => {
         </li>
         <li
           className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${
-            path == "/dashboard/question" && "text-primary font-bold"
-          }`}
-        >
-          question
-        </li>
-        <li
-          className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${
-            path == "/dashboard/upgrade" && "text-primary font-bold"
-          }`}
-        >
-          upgrade
-        </li>
-        <li
-          className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${
             path == "/dashboard/how" && "text-primary font-bold"
           }`}
         >
-          how it works
+          Purpose
+        </li>
+        <li
+          className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${
+            path == "/dashboard/question" && "text-primary font-bold"
+          }`}
+        >
+          About The Creator
         </li>
       </ul>
       <UserButton />
