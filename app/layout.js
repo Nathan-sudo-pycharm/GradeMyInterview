@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import { cn } from "@/utils/cn";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "../components/ui/sonner";
 
 const fontHeading = Inter({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
           className={cn("antialiased", fontHeading.variable, fontBody.variable)}
         >
           {children}
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>

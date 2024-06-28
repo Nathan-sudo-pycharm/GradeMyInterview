@@ -1,11 +1,10 @@
 import React from "react";
-import ContactUs, { SignupFormDemo } from "./ConactUs";
-import Header from "../dashboard/_components/Header";
+import ContactUs from "./ConactUs";
 
 const ContactPage = () => {
   return (
     <div>
-      <ContactUs />
+      <ContactUs classname="bg-neutral-950 min-h-screen" />
     </div>
   );
 };

@@ -22,3 +22,11 @@ export const UserAnswer = pgTable("UserAnswer", {
   userEmail: varchar("userEmail").notNull(),
   createdAt: varchar("createdAt").notNull(),
 });
+
+export const contactform = pgTable("Contact_Us", {
+  id: serial("id").primaryKey(),
+  name: varchar("name").notNull(),
+  email: varchar("createdBy").notNull(),
+  contactno: varchar("contactno").notNull(),
+  message: varchar("message").notNull(),
+});
