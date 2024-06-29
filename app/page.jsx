@@ -8,5 +8,5 @@ const page = () => {
     </div>
   );
 };
-h;
+
 export default page;
