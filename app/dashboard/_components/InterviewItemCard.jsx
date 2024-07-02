@@ -12,18 +12,20 @@ const InterviewItemCard = ({ interview }) => {
     router.push("/dashboard/interview/" + interview?.mockId + "/feedback");
   };
   return (
-    <div className="border shadow-sm rounded-xl p-3 ">
-      <h2 className="font-bold text-blue-700">{interview?.jobPosition}</h2>
-      <h2 className="text-sm text-gray-700">
+    <div className="border shadow-sm  rounded-xl p-3 ">
+      <h2 className="font-bold text-xl text-blue-700">
+        {interview?.jobPosition}
+      </h2>
+      <h2 className="text-base text-gray-200">
         {interview?.jobExp} {""}Year/s of Experience
       </h2>
-      <h2 className="text-xs text-gray-700">
+      <h2 className="text-base text-gray-500">
         Created On :{""} {interview?.createdAt}
       </h2>
       <div className="flex justify-between mt-2 gap-5">
         <Button
           size="sm"
-          className="w-full border border-gray-300 hover:bg-gray-100 bg-white rounded-xl"
+          className="w-full text-white border border-gray-300 hover:bg-gray-100 bg-black rounded-xl"
           onClick={onFeedback}
         >
           Feedback

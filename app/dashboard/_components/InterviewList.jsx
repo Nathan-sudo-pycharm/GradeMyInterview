@@ -25,8 +25,10 @@ const InterviewList = () => {
     setInterviewList(result);
   };
   return (
-    <div>
-      <h2 className="font-md text-xl">Previous Mock Interviews</h2>
+    <div className="">
+      <h2 className="font-md text-2xl text-neutral-400">
+        Previous Mock Interviews
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-3">
         {interviewList &&
           interviewList.map((interview, index) => (

@@ -66,6 +66,7 @@ export default function ContactUs() {
               onChange={(e) => setName(e.target.value)}
               className="rounded-lg border p-2 border-neutral-800 focus:ring-2 focus:ring-teal-500 w-full relative z-10 mt-4 bg-neutral-950 placeholder:text-neutral-700 text-white"
               placeholder="Enter your name"
+              required
             />
           </div>
           <div className="mb-4">
@@ -82,6 +83,7 @@ export default function ContactUs() {
               onChange={(e) => setContactno(e.target.value)}
               className="rounded-lg border p-2 border-neutral-800 focus:ring-2 focus:ring-teal-500 w-full relative z-10 mt-4 bg-neutral-950 placeholder:text-neutral-700 text-white"
               placeholder="Enter your contact number"
+              required
             />
           </div>
           <div className="mb-4">
@@ -98,6 +100,7 @@ export default function ContactUs() {
               onChange={(e) => setEmail(e.target.value)}
               className="rounded-lg border p-2 border-neutral-800 focus:ring-2 focus:ring-teal-500 w-full relative z-10 mt-4 bg-neutral-950 placeholder:text-neutral-700 text-white"
               placeholder="Enter your email address"
+              required
             />
           </div>
           <div className="mb-4">
@@ -114,6 +117,7 @@ export default function ContactUs() {
               className="rounded-lg border p-2 border-neutral-800 focus:ring-2 focus:ring-teal-500 w-full relative z-10 mt-4 bg-neutral-950 placeholder:text-neutral-700 text-white"
               rows="4"
               placeholder="Enter your message"
+              required
             />
           </div>
           <div className="flex items-center justify-center">

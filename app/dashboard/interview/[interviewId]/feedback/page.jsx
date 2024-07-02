@@ -40,7 +40,7 @@ const Feedback = ({ params }) => {
             {" "}
             Congratulations{" "}
           </h2>
-          <h2 className="font-bold text-2xl pt-5">
+          <h2 className="font-bold text-white text-2xl pt-5">
             Here is your Mock Interview Feedback
           </h2>
           <h2 className="text-sm text-gray-500">

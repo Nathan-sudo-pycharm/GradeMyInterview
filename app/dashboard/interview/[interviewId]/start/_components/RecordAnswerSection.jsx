@@ -100,7 +100,7 @@ const RecordAnswerSection = ({
   };
   return (
     <div className="flex items-center justify-center flex-col">
-      <div className="flex flex-col  justify-center items-center rounded-xl p-5 mt-32 bg-black">
+      <div className="flex flex-col  justify-center items-center rounded-xl p-5 mt-32 bg-gray-200">
         <Image
           src={"/images/webcamimg.png"}
           alt="WebCam"

@@ -31,19 +31,19 @@ const Interview = ({ params }) => {
 
   return (
     <div className="my-10  flex justify-center flex-col items-center ">
-      <h2 className="font-bold text-2xl">Let's get Started</h2>
+      <h2 className="font-bold text-[#FFA500] text-3xl">Let's get Started</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 ">
         <div className="flex flex-col my-5 p-5">
           <div className="flex flex-col  p-5 border border-gray-300 rounded-xl gap-1 ">
-            <h2 className="text-lg">
+            <h2 className="text-lg text-[#FFFFFF]">
               <strong>Job Role/Position: </strong>
               {interviewData ? interviewData.jobPosition : "Loading"}
             </h2>
-            <h2 className="text-lg">
+            <h2 className="text-lg text-[#FFFFFF]">
               <strong>Job Description / TechStack: </strong>
               {interviewData ? interviewData.jobDesc : "Loading"}
             </h2>
-            <h2 className="text-lg">
+            <h2 className="text-lg text-[#FFFFFF]">
               <strong>Years of Experience: </strong>
               {interviewData ? interviewData.jobExp : "Loading"}
             </h2>
@@ -78,7 +78,7 @@ const Interview = ({ params }) => {
               <div className="flex justify-center items-center ">
                 <Button
                   onClick={() => setWebCamEnabled(true)}
-                  className="bg-gray-100 rounded-xl text-black hover:shadow-gray-100 text-base"
+                  className="bg-gray-100 rounded-xl text-black hover:bg-white hover:shadow-gray-100 text-base"
                 >
                   Enable Web Cam and Microphone
                 </Button>
@@ -89,7 +89,7 @@ const Interview = ({ params }) => {
             <Link
               href={"/dashboard/interview/" + params.interviewId + "/start"}
             >
-              <Button className="bg-black rounded-xl text-white text-base">
+              <Button className="bg-black rounded-xl border border-white text-white text-base">
                 Start the Interview
               </Button>
             </Link>

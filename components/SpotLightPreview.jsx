@@ -27,29 +27,29 @@ function SpotLightPreview() {
         <div className="p-4 max-w-7xl mx-auto relative z-10 w-full pt-20 md:pt-0">
           <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-500 bg-opacity-50">
             Ace Your Interview Skills with <br />
-            <span className="text-8xl bg-gradient-to-b bg-clip-text text-transparent from-neutral-100 to-[#fdea00] ">
+            <span className="text-5xl md:text-8xl bg-gradient-to-b bg-clip-text text-transparent from-neutral-100 to-[#fdea00] ">
               IntelliMock
             </span>
           </h1>
           <div className="mt-4 font-normal text-lg text-neutral-300 max-w-lg text-center mx-auto">
-            IntelliMock offers AI-based mock interviews, boosting user's
+            IntelliMock offers AI-based mock interviews, boosting users'
             interview skills, confidence, and preparation for career success
             with realistic practice."
           </div>
-          <div className="flex gap-20 md:gap-10 sm:gap-10 flex-col align-middle justify-center md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4 mt-10">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 mt-10">
             <HoverBorderGradient
-              containerClassName="rounded-full p-1"
+              containerClassName="rounded-full "
               as="button"
               onClick={dashboardClick}
-              className="bg-black text-lg text-[#6c00ff] dark:text-white flex items-center space-x-2"
+              className="bg-black text-lg text-[#6c00ff]  dark:text-white flex items-center space-x-2 px-6 py-2"
             >
               <span>Get Started</span>
             </HoverBorderGradient>
             <HoverBorderGradient
-              containerClassName="rounded-full p-1"
+              containerClassName="rounded-full "
               as="button"
               onClick={contactClick}
-              className="bg-black text-lg text-red-300 dark:text-white flex items-center space-x-2"
+              className="bg-black text-lg text-red-300 dark:text-white flex items-center space-x-2 px-6 py-2"
             >
               <span>Contact Us</span>
             </HoverBorderGradient>

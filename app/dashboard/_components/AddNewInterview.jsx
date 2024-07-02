@@ -19,6 +19,7 @@ import { MockInterview } from "@/utils/schema";
 import { useUser } from "@clerk/nextjs";
 import moment from "moment/moment";
 import { useRouter } from "next/navigation";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 const AddNewInterview = () => {
   const [openDialog, setOpenDialog] = useState(false);
@@ -78,87 +79,99 @@ const AddNewInterview = () => {
     setLoading(false);
   };
   return (
-    <div>
-      <div className="p-10 border rounded-lg bg-secondary-foreground  hover:scale-105 hover:shadow-md cursor-pointer transition-all">
-        <h2
-          className="font-bold text-lg text-center "
+    <div className="">
+      <div>
+        <div
+          className="relative p-10 border rounded-lg bg-black border-neutral-500 text-white hover:scale-105 hover:shadow-md cursor-pointer transition-all"
           onClick={() => setOpenDialog(true)}
         >
-          + Add New{" "}
-        </h2>
+          <SparklesCore
+            background="transparent"
+            minSize={0.5}
+            maxSize={1.5}
+            particleDensity={100}
+            className="absolute inset-0 w-full h-full"
+            particleColor="#1B03A3"
+          />
+          <h2 className="relative font-bold text-2xl text-center z-10">
+            + New Interview
+          </h2>
+        </div>
+        <Dialog open={openDialog} onOpenChange={setOpenDialog}>
+          <DialogTrigger></DialogTrigger>
+          <DialogContent className="bg-neutral-950 max-w-3xl h-[30rem] items-center">
+            <DialogHeader>
+              <DialogTitle className="text-2xl text-red-800">
+                Tell us more about your Job Interview
+              </DialogTitle>
+              <DialogDescription>
+                <form onSubmit={onSubmit}>
+                  <div>
+                    <h2 className="text-base">
+                      Add details about your job position/role, job description,
+                      and experience
+                    </h2>
+                    <div className="mt-7 my-3  pb-2">
+                      <label className="text-base  ">Job Role</label>
+                      <Input
+                        placeholder="Full-Stack Developer"
+                        className="rounded-xl text-base bg-neutral-950"
+                        required
+                        onChange={(event) => setJobPosition(event.target.value)}
+                      />
+                    </div>
+                    <div className="mt-3 my-3 pb-2">
+                      <label className="text-base  ">
+                        Job Description/Tech-stack
+                      </label>
+                      <Textarea
+                        placeholder="Type your tech-stack here. Example: React JS, Flutter etc."
+                        className="rounded-xl text-base   bg-neutral-950"
+                        required
+                        onChange={(event) => setJobDesc(event.target.value)}
+                      />
+                    </div>
+                    <div className="mt-3 my-3">
+                      <label className="text-base  ">Years of Experience</label>
+                      <Input
+                        placeholder="0 or More"
+                        type="number"
+                        className="rounded-xl text-base bg-neutral-950"
+                        required
+                        max="60"
+                        onChange={(event) => setJobExp(event.target.value)}
+                      />
+                    </div>
+                  </div>
+                  <div className="flex gap-5 justify-end pt-2">
+                    <Button
+                      className="bg-red-700 text-white rounded-xl"
+                      type="button"
+                      onClick={() => setOpenDialog(false)}
+                    >
+                      Cancel
+                    </Button>
+                    <Button
+                      className="bg-black text-white border border-blue-800 rounded-xl"
+                      type="submit"
+                      disabled={loading}
+                    >
+                      {loading ? (
+                        <>
+                          <LoaderCircle className="animate-spin" />
+                          Generating from AI
+                        </>
+                      ) : (
+                        "Start Interview"
+                      )}
+                    </Button>
+                  </div>
+                </form>
+              </DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
       </div>
-      <Dialog open={openDialog} onOpenChange={setOpenDialog}>
-        <DialogTrigger>Open</DialogTrigger>
-        <DialogContent className="bg-white max-w-2xl">
-          <DialogHeader>
-            <DialogTitle className="text-2xl">
-              Tell us more about your Job Interview
-            </DialogTitle>
-            <DialogDescription>
-              <form onSubmit={onSubmit}>
-                <div>
-                  <h2>
-                    Add details about your job position/role, job description,
-                    and experience
-                  </h2>
-                  <div className="mt-7 my-3">
-                    <label>Job Role</label>
-                    <Input
-                      placeholder="Full-Stack Developer"
-                      className="rounded-xl"
-                      required
-                      onChange={(event) => setJobPosition(event.target.value)}
-                    />
-                  </div>
-                  <div className="mt-3 my-3">
-                    <label>Job Description/Tech-stack</label>
-                    <Textarea
-                      placeholder="Type your tech-stack here. Example: React JS, Flutter etc."
-                      className="rounded-xl"
-                      required
-                      onChange={(event) => setJobDesc(event.target.value)}
-                    />
-                  </div>
-                  <div className="mt-3 my-3">
-                    <label>Years of Experience</label>
-                    <Input
-                      placeholder="0 or More"
-                      type="number"
-                      className="rounded-xl"
-                      required
-                      max="60"
-                      onChange={(event) => setJobExp(event.target.value)}
-                    />
-                  </div>
-                </div>
-                <div className="flex gap-5 justify-end pt-2">
-                  <Button
-                    className="bg-red-700 text-white rounded-xl"
-                    type="button"
-                    onClick={() => setOpenDialog(false)}
-                  >
-                    Cancel
-                  </Button>
-                  <Button
-                    className="bg-black text-white rounded-xl"
-                    type="submit"
-                    disabled={loading}
-                  >
-                    {loading ? (
-                      <>
-                        <LoaderCircle className="animate-spin" />
-                        Generating from AI
-                      </>
-                    ) : (
-                      "Start Interview"
-                    )}
-                  </Button>
-                </div>
-              </form>
-            </DialogDescription>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 };
