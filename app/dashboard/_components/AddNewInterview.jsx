@@ -19,7 +19,7 @@ import { MockInterview } from "@/utils/schema";
 import { useUser } from "@clerk/nextjs";
 import moment from "moment/moment";
 import { useRouter } from "next/navigation";
-import { SparklesCore } from "@/components/ui/sparkles";
+import { SparklesCore } from "@/components/ui/Sparkles";
 
 const AddNewInterview = () => {
   const [openDialog, setOpenDialog] = useState(false);
